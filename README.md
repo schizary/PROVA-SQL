@@ -22,7 +22,8 @@ A Riot Games, desenvolvedora do popular jogo League of Legends, está implementa
 <h1>3- MODELO LÓGICO</h1>
 <p>O modelo lógico tem um objetivo similar ao modelo conceitual, a sua diferença é que ele exemplifica o modelo físico, agora ilustrando as chaves primarias e estrangeiras e os IDs</p>
 
-![Screenshot_193](https://github.com/schizary/PROVA-SQL/assets/161368632/fc745926-996c-4f26-898d-255ab657961e)
+![image](https://github.com/schizary/PROVA-SQL/assets/161368632/23c4bb0a-a69e-4058-b505-b9ca23f86194)
+
 
 <p>Nota:Para as cardinalidades que possuem (n,n), são criadas novas tabelas pra conter e agrupar informações das suas respectivas entidades, atributos compostos são "dissolvidos" e multivalorados se transformam em tabelas.</p>
 
