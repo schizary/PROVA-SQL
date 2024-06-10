@@ -537,7 +537,7 @@ ORDER BY Partida.data, Timee.nome, Player.nome;
 ![Screenshot_210](https://github.com/schizary/PROVA-SQL/assets/161368632/2782688a-52b0-4917-ae50-8f9af5d1de49)
 <p>Esta consulta exibe os detalhes das partidas (ID, duração, data e resultado), os nomes dos times que jogaram essas partidas e os nomes dos jogadores desses times. A consulta utiliza JOINs para combinar as tabelas Partida, Partida_Time, Timee, Time_Player e Player. Os resultados são ordenados pela data da partida, pelo nome do time e pelo nome do jogador.</p>
 
-<h4>Considerações Finais</h4>
+<h3>Considerações Finais</h4>
 <p>Essas consultas demonstram diferentes formas de selecionar, filtrar e ordenar dados para explorar as relações entre as tabelas no banco de dados.</p>
 
 <h1>FINALIZAÇÃO</h1>
