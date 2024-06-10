@@ -11,7 +11,8 @@ A Riot Games, desenvolvedora do popular jogo League of Legends, está implementa
 <h1>2- MODELO CONCEITUAL</h1>
 <p>O modelo conceitual é feito com o intúito de exemplificar em forma de diagramas, de qual maneira o sistema de dados vai funcionar, com suas devidas cardinalidades, tabelas, entidades e atributos, como no modelo a seguir:</p>
 
-![image](https://github.com/schizary/PROVA-SQL/assets/161368632/dbc30508-681b-4e74-939e-35c82dba67cd)
+![image](https://github.com/schizary/PROVA-SQL/assets/161368632/4f9e1ef5-9ed0-458d-8932-23a09aab276a)
+
 
 
 <p>No modelo acima, estão presentes todas as entidades, sendo elas: player, torneio, boneco, partida e time e seus atributos como maneira de reunir informações para atividades posteriores.</p>
