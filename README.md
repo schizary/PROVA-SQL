@@ -87,8 +87,8 @@ CREATE TABLE Partida_Time (
     PRIMARY KEY (partida_id, timee_id),
     FOREIGN KEY (partida_id) REFERENCES Partida(id),
     FOREIGN KEY (timee_id) REFERENCES Timee(id),
-	   data_entrada date,
-	   data_saida date
+    data_entrada date,
+    data_saida date
  
 );
 
