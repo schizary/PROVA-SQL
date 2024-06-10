@@ -3,6 +3,10 @@
 <h1>📝Objetivo</h1>
 <p>O objetivo do Banco de Dados a seguir é comportar as informações de um torneio de league of legends, contendo todas os dados necessários.</p>
 
+<h1>Cenário</h1>
+<p>Sistema de Banco de Dados para League of Legends
+A Riot Games, desenvolvedora do popular jogo League of Legends, está implementando um sistema de banco de dados para gerenciar todas as informações do jogo, como jogadores, campeões, partidas, times e torneios. Este sistema vai facilitar a administração e análise dos dados, ajudando na tomada de decisões estratégicas e melhorando a experiência dos jogadores. A seguir, detalhamos as entidades, atributos e relacionamentos necessários para este banco de dados.</p>
+
 <h2>TABELAS</h2>
 <p>As tabelas principais são: Player(informações do jogador participante do torneio), Torneio(Informações do torneio), Timee(Informações dos times participantes), Boneco(Informações dos campeões do jogo) e Partida(Informações de cada partida), também contendo a tabela Email para comportar os emails dos jogadores.</p>
 <p>As "tabelas-ponte", por assim dizer são tabelas com a função de fazer a relação entre tabelas n.n, como a Time_Player, por exemplo</p>
@@ -30,19 +34,20 @@ CREATE TABLE Player (
 ```
 
 ```sql
-   CREATE TABLE Email(
+CREATE TABLE Email(
     id INT identity PRIMARY KEY,
     player_id INT,
     FOREIGN KEY (player_id) REFERENCES Player(id),
     email varchar(255));
 ```
 ```sql
-   CREATE TABLE Email(
-
-    id INT identity PRIMARY KEY,
-    player_id INT,
-    FOREIGN KEY (player_id) REFERENCES Player(id),
-    email varchar(255));
+CREATE TABLE Partida (
+ 
+    id INT IDENTITY PRIMARY KEY,
+    duracao INT NOT NULL,
+    data DATE NOT NULL,
+    resultado VARCHAR(255) NOT NULL
+);
 ```
 
 
@@ -85,20 +90,6 @@ CREATE TABLE Boneco (
 ```
 <h3>"Tabelas-ponte"</h3>
 
-```sql
-CREATE TABLE Partida_Time (
- 
-    partida_id INT,
-    timee_id INT,
-    PRIMARY KEY (partida_id, timee_id),
-    FOREIGN KEY (partida_id) REFERENCES Partida(id),
-    FOREIGN KEY (timee_id) REFERENCES Timee(id),
-    data_entrada date,
-    data_saida date
- 
-);
-
-```
 ```sql
 CREATE TABLE Partida_Time (
  
