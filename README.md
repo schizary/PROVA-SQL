@@ -509,6 +509,7 @@ JOIN Torneio ON Torneio_Time.torneio_id = Torneio.id
 ORDER BY Player.nome, Torneio.data_inicio;
 ```
 ![Screenshot_211](https://github.com/schizary/PROVA-SQL/assets/161368632/e34a80a5-9893-4317-8db3-6c685f5cb0cd)
+<p> </p>
 ![Screenshot_212](https://github.com/schizary/PROVA-SQL/assets/161368632/5265bd08-a3ef-48be-8d79-2bacac9b90a9)
 
 
