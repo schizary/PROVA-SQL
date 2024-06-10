@@ -364,7 +364,7 @@ INSERT INTO Time_Player (timee_id, player_id) VALUES
 
 
 ```
-<h1>CRUD</h1>
+<h1>6- CRUD</h1>
 <p>O CRUD nada mais é que uma abreviação de (Create, Read, Update, Delete), criar, ler, atualizar e deletar.</p>
 <p>Ou seja, ele põe em prática suas ações, podendo adicionar, ler, atualizar e até remover dados</p>
 <h2>Exemplo:</h2>
@@ -375,13 +375,16 @@ INSERT INTO Player (nome, idade, data_nasc, posicoes, estado, cidade, bairro, em
 VALUES ('Cleitin', 21, '2003-05-10', 'Mid', 'São Paulo', 'Franca', 'Vera Cruz', 21, 11, 21);
 ```
 <h4>Ler</h4>
+
 ```sql
 INSERT INTO Player (nome, idade, data_nasc, posicoes, estado, cidade, bairro, email_id, timee_id, boneco_id) 
 VALUES ('Cleitin', 21, '2003-05-10', 'Mid', 'São Paulo', 'Franca', 'Vera Cruz', 21, 11, 21);
 ```
+
 ![Screenshot_196](https://github.com/schizary/PROVA-SQL/assets/161368632/bcfecacd-b022-4fbf-b15a-dddba36da54b)
 
 <h4>Atualizar</h4>
+
 ```sql
 UPDATE Player 
 SET bairro = 'Tropical'
@@ -390,11 +393,159 @@ WHERE id = 21;
 ![Screenshot_197](https://github.com/schizary/PROVA-SQL/assets/161368632/14f17c0c-0f88-4ab3-81da-11bb082bd349)
 
 <h4>Deletar</h4>
+
 ```sql
 DELETE FROM Player 
 WHERE id = 21;
 ```
 ![Screenshot_198](https://github.com/schizary/PROVA-SQL/assets/161368632/86c651b4-0561-45c1-8bf3-8ae026cafab5)
+
+<h1>7- Relatórios</h1>
+<p>Os relatórios servem como forma de filtrar e selecionar apenas as informações desejadas, aqui vão exemplos:</p>
+
+<h4>1. Seleção simples entre Jogadores e Times</h4>
+
+```sql
+SELECT Player.nome AS NomeDoJogador, Timee.nome AS NomeDoTime
+FROM Player
+JOIN Timee ON Player.timee_id = Timee.id;
+```
+![Screenshot_199](https://github.com/schizary/PROVA-SQL/assets/161368632/20f514d0-5c6c-40ad-bb69-145841d47c3c)
+<p>Esta consulta exibe o nome de cada jogador junto com o nome do time em que ele joga, utilizando um JOIN entre as tabelas Player e Timee.</p>
+
+<h4>2. Filtrando Jogadores por Posição e Ordenando por Idade</h4>
+
+```sql
+SELECT nome, idade, posicoes
+FROM Player
+WHERE posicoes = 'Mid'
+ORDER BY idade DESC;
+```
+![Screenshot_200](https://github.com/schizary/PROVA-SQL/assets/161368632/de868fb4-f5ec-4e2c-9fe5-980834a5ff98)
+
+
+<p>Esta consulta seleciona todos os jogadores que jogam na posição "Mid", ordenando-os por idade em ordem decrescente.</p>
+
+<h4>3. Filtrando Times por Região e Exibindo Jogadores</h4>
+
+```sql
+SELECT Timee.nome AS NomeDoTime, Player.nome AS NomeDoJogador
+FROM Timee
+JOIN Player ON Timee.id = Player.timee_id
+WHERE Timee.regiao = 'Europe';
+```
+![Screenshot_201](https://github.com/schizary/PROVA-SQL/assets/161368632/a08d6503-23b8-4e9a-8c1e-1ae999348a7f)
+
+<p>Esta consulta exibe os nomes dos times da região "Europe" e os jogadores que jogam nesses times.</p>
+
+<h4>4. Exibindo Torneios e os Times Participantes</h4>
+
+```sql
+SELECT Torneio.nome AS NomeDoTorneio, Timee.nome AS NomeDoTime, Torneio_Time.colocacao
+FROM Torneio
+JOIN Torneio_Time ON Torneio.id = Torneio_Time.torneio_id
+JOIN Timee ON Torneio_Time.timee_id = Timee.id
+ORDER BY Torneio.nome, Torneio_Time.colocacao;
+```
+![Screenshot_202](https://github.com/schizary/PROVA-SQL/assets/161368632/3a1fed37-6687-4b01-bfda-cec9add2f25a)
+
+<p>Esta consulta exibe os torneios juntamente com os times participantes e suas colocações, ordenando por nome do torneio e colocação.</p>
+
+<h4>5. Filtrando Jogadores por Estado e Ordenando por Cidade</h4>
+
+```sql
+SELECT nome, cidade, estado
+FROM Player
+WHERE estado = 'São Paulo'
+ORDER BY cidade;
+```
+![Screenshot_203](https://github.com/schizary/PROVA-SQL/assets/161368632/a922f406-d378-42fe-8c14-f97ccc74656d)
+
+<p>Esta consulta filtra jogadores do estado de São Paulo e os ordena por cidade.</p>
+
+<h4>6. Exibindo Jogadores e Seus Bonecos Usados</h4>
+
+```sql
+SELECT Player.nome AS NomeDoJogador, Boneco.nome AS NomeDoBoneco
+FROM Player
+JOIN Boneco ON Player.boneco_id = Boneco.id;
+```
+![Screenshot_204](https://github.com/schizary/PROVA-SQL/assets/161368632/513f8c7f-ce9d-4936-bdd9-e6328654e8d8)
+<p>Esta consulta exibe os jogadores e os bonecos que eles usam, utilizando um JOIN entre Player e Boneco.</p>
+
+<h4>7. Filtrando Partidas por Duração e Exibindo Resultados</h4>
+
+```sql
+SELECT id, duracao, data, resultado
+FROM Partida
+WHERE duracao > 30
+ORDER BY data DESC;
+```
+![Screenshot_205](https://github.com/schizary/PROVA-SQL/assets/161368632/5fb59a94-7959-4ac2-beaa-131c53de7552)
+<p>Esta consulta filtra as partidas que duraram mais de 30 minutos e as ordena por data em ordem decrescente.</p>
+
+<h4>8. Exibindo Times e Suas Colocações em Torneios</h4>
+
+```sql
+SELECT Timee.nome AS NomeDoTime, Torneio.nome AS NomeDoTorneio, Torneio_Time.colocacao
+FROM Timee
+JOIN Torneio_Time ON Timee.id = Torneio_Time.timee_id
+JOIN Torneio ON Torneio_Time.torneio_id = Torneio.id
+ORDER BY Torneio_Time.colocacao;
+```
+![Screenshot_206](https://github.com/schizary/PROVA-SQL/assets/161368632/ad2c39e7-e8f8-4ec4-b3a0-6fccec1dadcd)
+
+<p>Esta consulta exibe os times e suas colocações nos torneios.</p>
+
+<h1>9. Exibindo Detalhes dos Jogadores, Seus Times e Torneios em que Participaram</h1>
+
+```sql
+SELECT Player.nome AS NomeDoJogador, Timee.nome AS NomeDoTime, Torneio.nome AS NomeDoTorneio
+FROM Player
+JOIN Time_Player ON Player.id = Time_Player.player_id
+JOIN Timee ON Time_Player.timee_id = Timee.id
+JOIN Torneio_Time ON Timee.id = Torneio_Time.timee_id
+JOIN Torneio ON Torneio_Time.torneio_id = Torneio.id
+ORDER BY Player.nome, Torneio.data_inicio;
+```
+![Screenshot_205](https://github.com/schizary/PROVA-SQL/assets/161368632/a11ca901-dcda-4643-bd69-71b05ed59450)
+![Screenshot_206](https://github.com/schizary/PROVA-SQL/assets/161368632/33946763-788c-4d11-a8ae-b90cf7ef9488)
+<p>Esta consulta exibe os nomes dos jogadores, os nomes dos times em que eles jogam e os nomes dos torneios em que esses times participaram. A consulta usa vários JOINs para combinar as tabelas Player, Time_Player, Timee, Torneio_Time e Torneio. Os resultados são ordenados pelo nome do jogador e pela data de início do torneio.</p>
+
+<h1>10. Exibindo Detalhes das Partidas, Times e Jogadores</h1>
+
+```sql
+SELECT 
+    Partida.id AS PartidaID, 
+    Partida.duracao AS Duracao,
+    Partida.data AS Data,
+    Partida.resultado AS Resultado,
+    Timee.nome AS NomeDoTime,
+    Player.nome AS NomeDoJogador
+FROM Partida
+JOIN Partida_Time ON Partida.id = Partida_Time.partida_id
+JOIN Timee ON Partida_Time.timee_id = Timee.id
+JOIN Time_Player ON Timee.id = Time_Player.timee_id
+JOIN Player ON Time_Player.player_id = Player.id
+ORDER BY Partida.data, Timee.nome, Player.nome;
+```
+![Screenshot_209](https://github.com/schizary/PROVA-SQL/assets/161368632/bead8f03-4bbf-4832-bb36-e876cdf6db4f)
+![Screenshot_210](https://github.com/schizary/PROVA-SQL/assets/161368632/2782688a-52b0-4917-ae50-8f9af5d1de49)
+<p>Esta consulta exibe os detalhes das partidas (ID, duração, data e resultado), os nomes dos times que jogaram essas partidas e os nomes dos jogadores desses times. A consulta utiliza JOINs para combinar as tabelas Partida, Partida_Time, Timee, Time_Player e Player. Os resultados são ordenados pela data da partida, pelo nome do time e pelo nome do jogador.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
