@@ -17,9 +17,9 @@ CREATE TABLE Player (
     estado VARCHAR(255) NOT NULL,
     cidade VARCHAR(255) NOT NULL,
     bairro VARCHAR(255) NOT NULL,
-	  email_id int not null,
-	  timee_id int not null,
-	  boneco_id int not null,
-	  FOREIGN KEY (timee_id) REFERENCES Timee(id)
+email_id int not null,
+timee_id int not null,
+boneco_id int not null,
+FOREIGN KEY (timee_id) REFERENCES Timee(id)
 );
 ```
