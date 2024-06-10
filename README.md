@@ -3,7 +3,12 @@
 <h1>📝Objetivo</h1>
 <p>O objetivo do Banco de Dados a seguir é comportar as informações de um torneio de league of legends, contendo todas os dados necessários.</p>
 
-<h2>Criando as tabelas</h2>
+<h2>TABELAS</h2>
+<p>As tabelas principais são: Player(informações do jogador participante do torneio), Torneio(Informações do torneio), Timee(Informações dos times participantes), Boneco(Informações dos campeões do jogo) e Partida(Informações de cada partida), também contendo a tabela Email para comportar os emails dos jogadores.</p>
+<p>As "tabelas-ponte", por assim dizer são tabelas com a função de fazer a relação entre tabelas n.n, como a Time_Player, por exemplo</p>
+
+
+<h3>Criando as tabelas</h3>
 
 
 ```sql
@@ -78,6 +83,7 @@ CREATE TABLE Boneco (
  
 );
 ```
+<h3>"Tabelas-ponte"</h3>
 
 ```sql
 CREATE TABLE Partida_Time (
@@ -127,6 +133,7 @@ CREATE TABLE Time_Player (
     FOREIGN KEY (player_id) REFERENCES Player(id)
 );
 ```
+
 
 
 
