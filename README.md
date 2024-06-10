@@ -364,6 +364,43 @@ INSERT INTO Time_Player (timee_id, player_id) VALUES
 
 
 ```
+<h1>CRUD</h1>
+<p>O CRUD nada mais é que uma abreviação de (Create, Read, Update, Delete), criar, ler, atualizar e deletar.</p>
+<p>Ou seja, ele põe em prática suas ações, podendo adicionar, ler, atualizar e até remover dados</p>
+<h2>Exemplo:</h2>
+<h4>Criar</h4>
+
+```sql
+INSERT INTO Player (nome, idade, data_nasc, posicoes, estado, cidade, bairro, email_id, timee_id, boneco_id) 
+VALUES ('Cleitin', 21, '2003-05-10', 'Mid', 'São Paulo', 'Franca', 'Vera Cruz', 21, 11, 21);
+```
+<h4>Ler</h4>
+```sql
+INSERT INTO Player (nome, idade, data_nasc, posicoes, estado, cidade, bairro, email_id, timee_id, boneco_id) 
+VALUES ('Cleitin', 21, '2003-05-10', 'Mid', 'São Paulo', 'Franca', 'Vera Cruz', 21, 11, 21);
+```
+![Screenshot_196](https://github.com/schizary/PROVA-SQL/assets/161368632/bcfecacd-b022-4fbf-b15a-dddba36da54b)
+
+<h4>Atualizar</h4>
+```sql
+UPDATE Player 
+SET bairro = 'Tropical'
+WHERE id = 21;
+```
+![Screenshot_197](https://github.com/schizary/PROVA-SQL/assets/161368632/14f17c0c-0f88-4ab3-81da-11bb082bd349)
+
+<h4>Deletar</h4>
+```sql
+DELETE FROM Player 
+WHERE id = 21;
+```
+![Screenshot_198](https://github.com/schizary/PROVA-SQL/assets/161368632/86c651b4-0561-45c1-8bf3-8ae026cafab5)
+
+
+
+
+
+
 
 
 
