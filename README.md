@@ -12,11 +12,23 @@ A Riot Games, desenvolvedora do popular jogo League of Legends, está implementa
 
 ![Screenshot_192](https://github.com/schizary/PROVA-SQL/assets/161368632/094bf410-3ecf-416c-b811-d011f87751ad)
 
+<p>No modelo acima, estão presentes todas as entidades, sendo elas: player, torneio, boneco, partida e time e seus atributos como maneira de reunir informações para atividades posteriores.</p>
+
+
+
+<h1>MODELO LÓGICO</h1>
+<p>O modelo lógico tem um objetivo similar ao modelo conceitual, a sua diferença é que ele exemplifica o modelo físico, agora ilustrando as chaves primarias e estrangeiras e os IDs</p>
+
+![Screenshot_193](https://github.com/schizary/PROVA-SQL/assets/161368632/fc745926-996c-4f26-898d-255ab657961e)
+
+<p>Nota:Para as cardinalidades que possuem (n,n), são criadas novas tabelas pra conter e agrupar informações das suas respectivas entidades, atributos compostos são "dissolvidos" e multivalorados se transformam em tabelas.</p>
 
 
 <h2>TABELAS</h2>
 <p>As tabelas principais são: Player(informações do jogador participante do torneio), Torneio(Informações do torneio), Timee(Informações dos times participantes), Boneco(Informações dos campeões do jogo) e Partida(Informações de cada partida), também contendo a tabela Email para comportar os emails dos jogadores.</p>
 <p>As "tabelas-ponte", por assim dizer são tabelas com a função de fazer a relação entre tabelas n.n, como a Time_Player, por exemplo</p>
+
+
 
 
 <h3>Criando as tabelas</h3>
