@@ -1,5 +1,5 @@
 <h1>🎮BANCO DE DADOS PARA TORNEIO DE LOL!</h1>
-<p>Esse projeto foi feito para uma tarefa do primeiro semestre da materia Estrutura de Banco de Dados na FATEC.</p>
+<p>Esse projeto foi feito para uma tarefa do primeiro semestre da materia Estrutura de Banco de Dados no curso de Desenvolvimento de Software Multiplataforma da FATEC.</p>
 <h1>📝Objetivo</h1>
 <p>O objetivo do Banco de Dados a seguir é comportar as informações de um torneio de league of legends, contendo todas os dados necessários.</p>
 
@@ -536,6 +536,15 @@ ORDER BY Partida.data, Timee.nome, Player.nome;
 ![Screenshot_209](https://github.com/schizary/PROVA-SQL/assets/161368632/bead8f03-4bbf-4832-bb36-e876cdf6db4f)
 ![Screenshot_210](https://github.com/schizary/PROVA-SQL/assets/161368632/2782688a-52b0-4917-ae50-8f9af5d1de49)
 <p>Esta consulta exibe os detalhes das partidas (ID, duração, data e resultado), os nomes dos times que jogaram essas partidas e os nomes dos jogadores desses times. A consulta utiliza JOINs para combinar as tabelas Partida, Partida_Time, Timee, Time_Player e Player. Os resultados são ordenados pela data da partida, pelo nome do time e pelo nome do jogador.</p>
+
+<h4>Considerações Finais</h4>
+<p>Essas consultas demonstram diferentes formas de selecionar, filtrar e ordenar dados para explorar as relações entre as tabelas no banco de dados.</p>
+
+<h1>FINALIZAÇÃO</h1>
+<p>Espero que tenha gostado do banco de dados para torneios de lol!</p>
+<p>O projeto foi desenvolvido na plataforma Microsoft SQL Management Studio 18</p>
+<p>Projeto desenvolvido por Gustavo Schizari Ferreira Filho</p>
+
 
 
 
