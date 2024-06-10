@@ -6,11 +6,13 @@
 <h1>1- CENÁRIO</h1>
 <p>Sistema de Banco de Dados para League of Legends
 A Riot Games, desenvolvedora do popular jogo League of Legends, está implementando um sistema de banco de dados para gerenciar todas as informações do jogo, como jogadores, campeões, partidas, times e torneios. Este sistema vai facilitar a administração e análise dos dados, ajudando na tomada de decisões estratégicas e melhorando a experiência dos jogadores. A seguir, detalhamos as entidades, atributos e relacionamentos necessários para este banco de dados.</p>
+<p> Time: Data de criação, Nome e Região, IdTime<br>Player: Nome, Idade, Data de nascimento, Posicoes e Endereço, IdPlayer <br>Boneco:Nome, Função, Dificuldade,Data de lançamento, IdBoneco<br>Torneio:Premiação, Data de início, data de término, Nome, Localização, IdTorneio<br>Partida:Data, Duração, Resultado, IdPartida.</p>
 
 <h1>2- MODELO CONCEITUAL</h1>
 <p>O modelo conceitual é feito com o intúito de exemplificar em forma de diagramas, de qual maneira o sistema de dados vai funcionar, com suas devidas cardinalidades, tabelas, entidades e atributos, como no modelo a seguir:</p>
 
-![Screenshot_192](https://github.com/schizary/PROVA-SQL/assets/161368632/094bf410-3ecf-416c-b811-d011f87751ad)
+![image](https://github.com/schizary/PROVA-SQL/assets/161368632/dbc30508-681b-4e74-939e-35c82dba67cd)
+
 
 <p>No modelo acima, estão presentes todas as entidades, sendo elas: player, torneio, boneco, partida e time e seus atributos como maneira de reunir informações para atividades posteriores.</p>
 
@@ -29,7 +31,13 @@ A Riot Games, desenvolvedora do popular jogo League of Legends, está implementa
 <p>As "tabelas-ponte", por assim dizer são tabelas com a função de fazer a relação entre tabelas n.n, como a Time_Player, por exemplo</p>
 
 
+<h2>Criando Database</h2>
+<p>Para criarmos a database, ou banco de dados, é necessário utilizar o seguinte comando:</p>
 
+```sql
+create database torneiolol
+use TORNEIOLOL
+```
 
 <h2>Criando as tabelas</h2>
 
