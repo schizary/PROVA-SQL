@@ -508,8 +508,10 @@ JOIN Torneio_Time ON Timee.id = Torneio_Time.timee_id
 JOIN Torneio ON Torneio_Time.torneio_id = Torneio.id
 ORDER BY Player.nome, Torneio.data_inicio;
 ```
-![Screenshot_205](https://github.com/schizary/PROVA-SQL/assets/161368632/a11ca901-dcda-4643-bd69-71b05ed59450)
-![Screenshot_206](https://github.com/schizary/PROVA-SQL/assets/161368632/33946763-788c-4d11-a8ae-b90cf7ef9488)
+![Screenshot_211](https://github.com/schizary/PROVA-SQL/assets/161368632/e34a80a5-9893-4317-8db3-6c685f5cb0cd)
+![Screenshot_212](https://github.com/schizary/PROVA-SQL/assets/161368632/5265bd08-a3ef-48be-8d79-2bacac9b90a9)
+
+
 <p>Esta consulta exibe os nomes dos jogadores, os nomes dos times em que eles jogam e os nomes dos torneios em que esses times participaram. A consulta usa vários JOINs para combinar as tabelas Player, Time_Player, Timee, Torneio_Time e Torneio. Os resultados são ordenados pelo nome do jogador e pela data de início do torneio.</p>
 
 <h1>10. Exibindo Detalhes das Partidas, Times e Jogadores</h1>
